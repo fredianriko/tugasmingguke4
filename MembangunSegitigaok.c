@@ -1,13 +1,13 @@
 #include <stdio.h>
 int main() {
-    float a,b,c,ab,ca,bc,xx,x,y,z,kuadrat,kuadratx, k=0.01;
-    char ch; ch='y';
+    float a,b,c,ab,ca,bc,xx,x,y,z,kuadrat,kuadratx, k=0.001;
+    char ch='y';
     while (ch=='y'){
-        printf("Masukan nilai ke variabel\n");
+        printf("Masukkan nilai :\n");
         printf("a = ");scanf("%f",&a);
         printf("b = ");scanf("%f",&b);
         printf("c = ");scanf("%f",&c);
-        printf("\nSegitiga yang dapat dibangun ADALAH \n ");
+        printf("Segitiga yang dapat dibangun ADALAH\n >> ");
     /*cek ketelitian*/
         ab = a-b;
         bc = b-c;
@@ -19,7 +19,7 @@ int main() {
         }if (ca<0){
             ca=ca*-1;
         }
-    printf("selisih nya \n a dan b = %f \n b dan c = %f\n c dan a = %f\n", ab,bc,ca);
+   // printf("\n\n\n\n\nselisih nya \n\n\n\n\n a dan b = %f \n\n\n\n\n b dan c = %f\n\n\n\n\n c dan a = %f\n", ab,bc,ca);
         if (ab<k) {
             a=b;
             if (ca<(2*k)){
@@ -55,29 +55,30 @@ int main() {
         }
 
    /*dilakukan penjumlahan kedua sisi*/{
-        printf("\nurutanya adalah %f %f %f\n",x,y,z);
+   //    printf("\n\n\n\n\nurutanya adalah %f %f %f\n",x,y,z);
         xx = y+z;
         kuadrat = y*y + z*z;
         kuadratx = x*x;
    }
    /*pembangun segitiga*/{
-        if ((a<=0) || (b<=0) || (c<=0)){
-            printf("\ntidak ada.");
-        }else if ((x>xx)){
-            printf("\ntidak ada .");
+        if ((a<=0) || (b<=0) || (c<=0) || (x>xx)){
+            printf("tidak ada");
         }else if ((x==y) && (y==z) && (z==x)){
-            printf("\nsegitiga sama sisi");
+            printf("segitiga sama sisi");
         }else if (((x==y)) || ((y==z)) || ((z==x))){
-            printf("\nsegitiga sama kaki");
+            printf("segitiga sama kaki");
         }else if (kuadrat==kuadratx){
-            printf("\nsegitiga Siku");
+            printf("segitiga Siku");
         }else{
-            printf("\nsegitiga bebas");
+            printf("segitiga bebas");
         }
+    printf(" <<");
     }
-    printf("\n\nSelesai\n");
-    printf("lagi ? (y/N) \n");scanf("%s",&ch);
+
+    printf("\n\nlagi ? (y/N) : ");scanf("%s",&ch);
+    printf("==========================\n");
     }
+     printf("\n\nSelesai\n");
     getchar();
     return 0;
     }
